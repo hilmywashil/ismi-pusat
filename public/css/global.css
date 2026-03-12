@@ -199,13 +199,52 @@ body {
 .btn {
     display: inline-block;
     padding: 12px 26px;
-    background: #015931;
+    background: #F05B06;
     color: #fff;
-    border: none;
+    border: #F05B06 1px solid;
     text-decoration: none;
     border-radius: 5px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.btn-green {
+    display: inline-block;
+    padding: 12px 26px;
+    background: #015931;
+    color: #fff;
+    border: #015931 1px solid;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.btn-white {
+    display: inline-block;
+    padding: 12px 26px;
+    background: #ffffff;
+    color: #000;
+    border: #ffffff 1px solid;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.btn-border {
+    display: inline-block;
+    padding: 12px 26px;
+    background: transparent;
+    color: #fff;
+    border: #fff 1px solid;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 400;
     transition: 0.3s;
 }
 
@@ -221,7 +260,10 @@ body {
 }
 
 .login-btn:hover,
+.btn-white:hover,
 .btn:hover,
+.btn-green:hover,
+.btn-border:hover,
 .btn-transparent:hover {
     transform: scale(1.05);
 }

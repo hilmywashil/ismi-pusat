@@ -1,0 +1,40 @@
+.pengurus-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px 100px 50px;
+}
+
+.pengurus {
+    width: 100%;
+    max-width: 1500px;
+}
+
+.pengurus-head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.pengurus-head img {
+    width: 300px;
+}
+
+.pengurus-head h1 {
+    font-size: 15px;
+    text-align: center;
+    width: 30%;
+}
+
+@media(max-width: 1024px) {
+    .pengurus-head h1 {
+        width: 100%;
+    }
+
+    .pengurus-head img {
+        width: 200px;
+    }
+
+}

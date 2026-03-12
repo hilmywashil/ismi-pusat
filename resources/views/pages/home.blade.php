@@ -1,171 +1,218 @@
 @extends('layouts.app')
 
-@section('title', 'ISMI JABAR - Ikatan Saudagar Muslim Indonesia')
+@section('title', 'ISMI')
 
 @section('content')
 
-    <section class="heros">
+    <section class="wrapper-mosque">
         <div class="hero">
-            <div class="hero-1" data-aos="fade-up">
-                <h1>Selamat datang di Website ISMI JABAR</h1>
-                <p>IKATAN SAUDAGAR MUSLIM SE-INDONESIA</p>
-                <div class="hero-buttons">
-                    <a href="{{ route('about') }}" class="btn">Tentang Kami</a>
-                </div>
+            <div class="heading" data-aos="fade-up">
+                <h2 id="ketik"></h2>
+                <h1>Selamat datang di<br>Website Resmi ISMI !</h1>
             </div>
-        </div>
-    </section>
-
-    <section class="about">
-        <div class="abouts" data-aos="fade-up">
-            <div class="about-image">
-                <img src="{{ asset('images/about.jpg') }}" alt="about Image">
-            </div>
-
-            <div class="about-content">
-                <div class="about-heading">
-                    <span class="label">Overview</span>
-                    <h2>Tentang ISMI JABAR</h2>
-                </div>
-                <div class="about-text">
-                    ISMI Jabar hadir sebagai wadah profesional para saudagar muslim di Jawa Barat yang berkomitmen mendorong
-                    pertumbuhan ekonomi berbasis nilai-Islam. Melalui kolaborasi, inovasi, dan jaringan yang kuat, kami
-                    mewujudkan iklim usaha yang berdaya saing — sekaligus beretika dan berkelanjutan.
-                </div>
+            <div class="buttons" data-aos="fade-up">
                 <a href="{{ route('about') }}" class="btn">Tentang Kami</a>
+                <a href="{{ route('about') }}" class="btn-border">Kontak Kami</a>
             </div>
-        </div>
+            <div class="social" data-aos="fade-up">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <img src="{{ asset('images/mosque.png') }}" class="mosque">
         </div>
     </section>
+    <section class="wrapper-white-1">
+        <div class="jadwal">
+            <div class="section-head" data-aos="fade-up">
+                <span class="label">Jadwal</span>
+                <h1>Jadwal Shalat</h1>
+                <p>{{ \Carbon\Carbon::now()->locale('id')->translatedFormat('l, d F Y') }} <br> Wilayah <b>Jakarta</b> dan
+                    Sekitarnya</p>
+            </div>
+            <div class="jadwal-container" data-aos="fade-up">
 
-    <section class="events">
-        <div class="event" data-aos="fade-up">
-            <span class="label">Kegiatan</span>
-            <h2>Kegiatan Kami di ISMI JABAR</h2>
-            <div class="events-content">
-                @if($kegiatanBerita->count() > 0)
-                    {{-- Berita Featured (Terbesar) --}}
-                    <div class="events-lastest">
-                        <a class="events-hover" href="{{ route('berita-detail', $kegiatanBerita->first()->slug) }}"
-                            style="text-decoration: none; color: white;">
-                            <div class="events-banner-card-lastest">
-                                <img src="{{ $kegiatanBerita->first()->gambar_url }}" class="events-banner-bg"
-                                    alt="{{ $kegiatanBerita->first()->judul }}">
-
-                                <div class="events-overlay"></div>
-
-                                <div class="events-banner-content">
-                                    <h2>{{ Str::limit($kegiatanBerita->first()->judul, 80) }}</h2>
-                                    <p class="events-date">{{ $kegiatanBerita->first()->tanggal_format }}</p>
-                                    <a href="{{ route('berita-detail', $kegiatanBerita->first()->slug) }}"
-                                        class="events-btn-more">Lihat Lebih Banyak</a>
-                                </div>
-                            </div>
-                        </a>
+                <div class="jadwal-card">
+                    <img src="images/bg-jadwal.png" class="bg">
+                    <div class="content">
+                        <p class="title">Subuh</p>
+                        <p class="arab">الفجر</p>
+                        <div class="time">{{ $jadwal['Fajr'] }} WIB</div>
                     </div>
+                </div>
 
-                    {{-- Berita Lainnya (4 berita dalam grid) --}}
-                    <div class="events-others">
-                        @foreach($kegiatanBerita->skip(1)->take(4) as $berita)
-                            <a href="{{ route('berita-detail', $berita->slug) }}" style="text-decoration: none; color: white;">
-                                <div class="events-banner-card">
-                                    <img src="{{ $berita->gambar_url }}" class="events-banner-bg" alt="{{ $berita->judul }}">
-
-                                    <div class="events-overlay"></div>
-
-                                    <div class="events-banner-content" style="left: 20px; bottom: 20px;">
-                                        <h2>{{ Str::limit($berita->judul, 50) }}</h2>
-                                        <p class="events-date">{{ $berita->tanggal_format }}</p>
-                                        <span class="events-btn-more">Lihat Lebih Banyak</span>
-                                    </div>
-                                </div>
-                            </a>
-                        @endforeach
+                <div class="jadwal-card">
+                    <img src="images/bg-jadwal.png" class="bg">
+                    <div class="content">
+                        <p class="title">Dzuhur</p>
+                        <p class="arab">الظهر</p>
+                        <div class="time">{{ $jadwal['Dhuhr'] }} WIB</div>
                     </div>
-                @else
-                    <div style="text-align: center; padding: 3rem 0; color: #ffffff;">
-                        <p>Belum ada informasi kegiatan yang tersedia.</p>
+                </div>
+                <div class="jadwal-card">
+                    <img src="images/bg-jadwal.png" class="bg">
+                    <div class="content">
+                        <p class="title">Ashar</p>
+                        <p class="arab">العصر</p>
+                        <div class="time">{{ $jadwal['Asr'] }} WIB</div>
                     </div>
-                @endif
-            </div>
-            <div style="text-align:center; margin-top: 50px;">
-                <a href="{{ route('informasi-kegiatan') }}" class="btn">Lihat Lebih Banyak</a>
-            </div>
-        </div>
-    </section>
+                </div>
 
-    <section class="home-highlight">
-        <div class="home-highlight-container">
-            <div class="highlight-head">
-                <span class="label">Produk</span>
-                <h1>Beberapa Produk ISMI untuk mendukung Bisnis yang Anda Miliki</h1>
-            </div>
-            <div class="highlight-text">
-                <p>Lihat dan optimalkan produk yang sudah disediakan</p>
-            </div>
-            <div class="highlight-button">
-                <a href="{{ route('about') }}" class="btn">Lihat Produk Kami</a>
-            </div>
-        </div>
-    </section>
+                <div class="jadwal-card">
+                    <img src="images/bg-jadwal.png" class="bg">
+                    <div class="content">
+                        <p class="title">Maghrib</p>
+                        <p class="arab">المغرب</p>
+                        <div class="time">{{ $jadwal['Maghrib'] }} WIB</div>
+                    </div>
+                </div>
 
-    <section class="ekatalog-home">
-        <div class="ekatalog-homes" data-aos="fade-up">
-            <span class="label">Anggota</span>
-
-            <h2>Anggota ISMI JABAR</h2>
-            <div class="owl-carousel showcase-carousel">
-
-                @foreach($katalogs->take(6) as $katalog)
-                    <a href="{{ route('e-katalog.detail', $katalog->id) }}">
-                        <div class="katalog-card">
-                            <img src="{{ $katalog->logo_url }}" alt="{{ $katalog->company_name }}">
-                            <div class="container">
-                                <h4><b>{{ Str::limit($katalog->company_name, 20, '...') }}</b></h4>
-                                <p>{{ Str::limit($katalog->business_field, 25, '...') }}</p>
-                            </div>
-                        </div>
-                    </a>
-                @endforeach
-            </div>
-            @if ($katalogs->isEmpty())
-                <a href="{{ route('e-katalog') }}" style="text-decoration: none; color: #015931;">
-                    Tidak ada data
-                </a>
-            @endif
-
-            <div style="margin-top: 50px;">
-                <a href="{{ route('e-katalog') }}" class="btn">Lihat Lebih Banyak</a>
+                <div class="jadwal-card">
+                    <img src="images/bg-jadwal.png" class="bg">
+                    <div class="content">
+                        <p class="title">Isya</p>
+                        <p class="arab">العشاء</p>
+                        <div class="time">{{ $jadwal['Isha'] }} WIB</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <section class="beritas-homes">
-        <div class="berita-heading" data-aos="fade-up">
-            <span class="label">Berita</span>
-            <h2>Berita Terkini dari ISMI JABAR</h2>
+    <section class="wrapper-white-2">
+        <div class="about-home" data-aos="fade-up">
+            <div class="left">
+                <img src="{{ asset('images/h-ilham-habibie.png') }}" alt="H. Ilham Habibie">
+            </div>
+            <div class="right">
+                <div class="title">
+                    <span class="label">Tentang</span>
+                    <h1>Bersama ISMI, <br>Menguatkan Saudagar Muslim</h1>
+                </div>
+                <div class="content">
+                    <p>
+                        Ikatan Saudagar Muslim se-Indonesia (ISMI) adalah organisasi yang menghimpun para
+                        pengusaha dan profesional Muslim dari berbagai sektor usaha di seluruh Indonesia.
+                        ISMI hadir sebagai wadah kolaborasi, silaturahmi, dan penguatan ekonomi umat dengan
+                        berlandaskan nilai-nilai Islam yang berintegritas, amanah, dan berorientasi pada
+                        kemaslahatan bersama.
+                    </p>
+                    <p>
+                        Melalui berbagai program seperti forum bisnis, pelatihan kewirausahaan,
+                        pendampingan usaha, serta kolaborasi strategis lintas sektor, ISMI berupaya
+                        menciptakan ekosistem ekonomi yang inklusif dan berdampak luas.
+                    </p>
+                </div>
+                <a href="#" class="btn-green">Selengkapnya Tentang Kami</a>
+            </div>
         </div>
-
-        <div class="berita-content" data-aos="fade-up">
-
-            @foreach($beritas as $b)
-                <a href="{{ route('berita-detail', $b->slug) }}">
-                    <div class="buku-card">
-                        <img src="{{ $b->gambar_url }}" alt="Usaha Anggota 1" loading="lazy">
+    </section>
+    <section class="wrapper-white-2">
+        <div class="anggota-home" data-aos="fade-up">
+            <div class="section-head">
+                <span class="label">Anggota</span>
+                <h1>Anggota ISMI</h1>
+                <p>Kekuatan Kami Ada Pada Anggota</p>
+            </div>
+            <div class="grid">
+                <a href="#">
+                    <div class="katalog-card">
+                        <img src="{{ asset('images/h-ilham-habibie.png') }}" alt="Anggota ISMI">
                         <div class="container">
-                            <p>{{ $b->tanggal_format }}</p>
-                            <h4>{{ Str::limit($b->judul, limit: 80) }}</h4>
+                            <h4><b>CyberLabs</b></h4>
+                            <p>Digital Marketing</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="katalog-card">
+                        <img src="{{ asset('images/h-ilham-habibie.png') }}" alt="Anggota ISMI">
+                        <div class="container">
+                            <h4><b>CyberLabs</b></h4>
+                            <p>Digital Marketing</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <a href="#" class="btn-green">Lihat Semua Anggota</a>
+        </div>
+    </section>
+    <section class="wrapper-green">
+        <div class="product-home" data-aos="fade-up">
+            <div class="left">
+                <div class="title">
+                    <span class="label">Produk</span>
+                    <h1>Beberapa Produk ISMI untuk mendukung Bisnis yang Anda Miliki</h1>
+                </div>
+                <p>Lihat dan optimalkan produk yang sudah disediakan</p>
+                <a href="#" class="btn-white">Lihat Produk Kami</a>
+            </div>
+            <div class="right">
+                <img src="{{ asset('images/mosque-shape.png') }}" alt="Mosque Shape">
+            </div>
+        </div>
+    </section>
+    <section class="wrapper-white-1">
+        <div class="berita-home" data-aos="fade-up">
+            <div class="section-head">
+                <span class="label">Berita</span>
+                <h1>Berita Kami</h1>
+                <p>Update Berita Terbaru seputar ISMI</p>
+            </div>
+            <div class="grid">
+                <a href="#">
+                    <div class="berita-card">
+                        <img src="{{ asset('images/ilham-habibie-ketua-umum-ismi.webp') }}" alt="Anggota ISMI">
+                        <div class="container">
+                            <h3><b>Ilham Akbar Habibie dikukuhkan kembali sebagai Ketua Umum ISMI</b></h3>
+                            <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
+                            </p>
                             <p>Baca Selengkapnya</p>
                         </div>
                     </div>
                 </a>
-            @endforeach
-
+                <a href="#">
+                    <div class="berita-card">
+                        <img src="{{ asset('images/ilham-habibie-ketua-umum-ismi.webp') }}" alt="Anggota ISMI">
+                        <div class="container">
+                            <h3><b>Ilham Akbar Habibie dikukuhkan kembali sebagai Ketua Umum ISMI</b></h3>
+                            <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
+                            </p>
+                            <p>Baca Selengkapnya</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="berita-card">
+                        <img src="{{ asset('images/ilham-habibie-ketua-umum-ismi.webp') }}" alt="Anggota ISMI">
+                        <div class="container">
+                            <h3><b>Ilham Akbar Habibie dikukuhkan kembali sebagai Ketua Umum ISMI</b></h3>
+                            <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
+                            </p>
+                            <p>Baca Selengkapnya</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <a href="#" class="btn-green">Lihat Semua Berita</a>
         </div>
     </section>
-
 @endsection
 
 @push('scripts')
+    <script>
+        const text = "Assalamu'alaikum";
+        let i = 0;
+
+        function ketik() {
+            if (i < text.length) {
+                document.getElementById("ketik").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(ketik, 70);
+            }
+        }
+
+        ketik();
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const counters = document.querySelectorAll('.counter');

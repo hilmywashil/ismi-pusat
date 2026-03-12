@@ -1,0 +1,746 @@
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.1;
+    margin: 0;
+}
+
+p {
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =================================================================================
+=================================[ WRAPPER GLOBAL ]=================================
+================================================================================= */
+
+.wrapper-mosque {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0px 0px 0px;
+    background-image:
+        linear-gradient(rgba(1, 89, 49, 0.6), rgba(1, 89, 49, 0.6)),
+        url('../images/bg-mosque.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.wrapper-white-1 {
+    width: 100%;
+    display: flex;
+    background-color: #FFFFFF;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 50px 100px 50px;
+}
+
+.wrapper-white-2 {
+    width: 100%;
+    display: flex;
+    background-color: #F1F5F8;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 50px 100px 50px;
+}
+
+.wrapper-green {
+    width: 100%;
+    display: flex;
+    background-color: #015931;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 50px 100px 50px;
+}
+
+.section-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.section-head h1 {
+    text-align: center;
+    color: #015931;
+    font-size: 30px;
+}
+
+.section-head p {
+    text-align: center;
+    color: #000;
+}
+
+@media (max-width: 1024px) {
+
+    .wrapper-white-1,
+    .wrapper-white-2,
+    .wrapper-green {
+        padding: 50px 20px 50px 20px;
+    }
+}
+
+/* =================================================================================
+================================[ HEADER & FOOTER ]=================================
+================================================================================= */
+
+/* ================== HEADER ================== */
+header {
+    width: 100%;
+    background-color: #ffffff;
+    color: white;
+    padding: 20px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+nav {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    width: 50%;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+
+.nav-link.active {
+    color: #015931 !important;
+    font-weight: 600;
+}
+
+.logo {
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.logo1 {
+    width: 150px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #015931;
+}
+
+.buttons {
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.buttons-mobile {
+    display: none;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    left: 0;
+    background: #ffffff;
+    min-width: 160px;
+    padding: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.dropdown-menu a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background: #f2f2f2;
+    color: #015931;
+}
+
+.dropdown-menu a.active {
+    color: #015931;
+    font-weight: 600;
+}
+
+@media (min-width: 1025px) {
+    .dropdown:hover .dropdown-menu {
+        display: flex;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    header {
+        padding: 10px 20px;
+    }
+
+    nav {
+        justify-content: space-between;
+    }
+
+    .logo1 {
+        width: 100px;
+    }
+
+    .logo2 {
+        width: 120px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu {
+        position: absolute;
+        top: 100px;
+        right: 20px;
+        background-color: #ffffff;
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        width: 180px;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .nav-link {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .buttons {
+        display: none;
+    }
+
+    .buttons-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .dropdown-menu.show {
+        display: flex;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        padding-left: 0px;
+    }
+
+}
+
+/* ================== FOOTER ================== */
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #363636;
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 50px;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    justify-content: space-between;
+}
+
+.footer-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    flex: 1;
+    text-align: left;
+}
+
+.footer-item h3 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.footer-item p {
+    margin-bottom: 15px;
+}
+
+.footer-item-child {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.footer-item-child p {
+    flex: 1;
+    margin: 0;
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 15px;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+.footer-logo2 {
+    width: 150px;
+}
+
+.footer-desc p {
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.footer-bottom {
+    background-color: #015931;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+}
+
+.footer-bottom a {
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.footer-social img {
+    width: 50px;
+}
+
+.footer-social-icons {
+    font-size: 25px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.contact-social-icons {
+    font-size: 25px;
+    color: #2A348D;
+    text-decoration: none;
+    transition: 0.3s;
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+@media (max-width: 1024px) {
+    footer {
+        padding: 50px 20px;
+    }
+
+    .footer-logo {
+        padding: 20px;
+    }
+
+    .footer-logo2 {
+        width: 100px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-item {
+        text-align: left;
+    }
+
+    .footer-social {
+        flex-direction: row;
+    }
+
+    .footer-social img {
+        width: 40px;
+    }
+
+}
+
+/* =================================================================================
+=================================[ HOME PAGE ]=====================================
+================================================================================= */
+
+/* ========== HERO ========== */
+.hero {
+    width: 100%;
+    padding: 0;
+    gap: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.hero h1 {
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.hero h2 {
+    margin: 0;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.hero .heading {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.hero .social a {
+    width: 35px;
+    height: 35px;
+    background: #ff6a00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.hero .social i {
+    color: white;
+    font-size: 20px;
+}
+
+.hero .mosque {
+    width: 100%;
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .hero .heading {
+        padding: 0px 20px 0px 20px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+}
+
+/* ========== JADWAL SHALAT ========== */
+
+.jadwal {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.jadwal-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+    justify-content: center;
+    padding: 80px 20px;
+}
+
+.jadwal-card {
+    position: relative;
+    width: 100%;
+    max-width: 170px;
+    margin: auto;
+}
+
+.jadwal-card .bg {
+    width: 100%;
+    display: block;
+}
+
+.jadwal-card .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    text-align: center;
+}
+
+.jadwal-card .title {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.jadwal-card .arab {
+    color: #FFC107;
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.jadwal-card .time {
+    margin-top: 10px;
+    background: #0d5c3c;
+    padding: 6px 18px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .jadwal-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .jadwal-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========== ABOUT HOME ========== */
+.about-home {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-home .left {
+    flex: 1;
+}
+
+.about-home .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    align-items: start;
+}
+
+.about-home .right .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+}
+
+.about-home .right .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    font-size: 15px;
+}
+
+.about-home .right .title h1 {
+    color: #015931;
+    font-size: 30px;
+}
+
+.about-home .left img {
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .about-home {
+        flex-direction: column;
+    }
+}
+
+/* ========== ANGGOTA HOME ========== */
+
+.anggota-home {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.anggota-home .grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+@media(max-width: 1024px) {
+
+    .anggota-home .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* ========== PRODUCT HOME ========== */
+.product-home {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.product-home .left {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: start;
+    color: #FFFFFF;
+}
+
+.product-home .left h1 {
+    font-size: 40px;
+}
+
+.product-home .right {
+    flex: 1;
+}
+
+.product-home .right img {
+    width: 100%;
+}
+
+.product-home .left .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+}
+
+@media(max-width: 1024px) {
+    .product-home {
+        flex-direction: column;
+    }
+}
+
+/* ========== BERITA HOME ========== */
+.berita-home {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.berita-home .grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+@media(max-width: 1024px) {
+    .berita-home .grid {
+        grid-template-columns: 1fr;
+    }
+}

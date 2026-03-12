@@ -9,18 +9,28 @@ use App\Models\Berita;
 use App\Models\Umkm;
 use App\Models\StrategicPlan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
+
     public function index(Request $request)
     {
-        // Ambil data katalog aktif (maksimal 10)
+        $response = Http::get('https://api.aladhan.com/v1/timingsByCity', [
+            'city' => 'Jakarta',
+            'country' => 'Indonesia',
+            'method' => 11
+        ]);
+
+        $data = $response->json();
+
+        $jadwal = $data['data']['timings'];
+
         $katalogs = Katalog::where('is_active', true)
             ->orderBy('created_at', 'desc')
             ->take(10)
             ->get();
 
-        // Hitung total katalog aktif   
         $totalKatalog = Katalog::where('is_active', true)->count();
 
         // Ambil data misi yang aktif dan diurutkan
@@ -47,7 +57,7 @@ class HomeController extends Controller
 
         // Ambil berita untuk section "Berita & Dokumentasi" (7 berita terbaru)
         $dokumentasiBerita = Berita::active()
-        
+
             ->latestPublish()
             ->take(7)
             ->get();
@@ -90,7 +100,8 @@ class HomeController extends Controller
             'kegiatanBerita',
             'dokumentasiBerita',
             'tataKelola',
-            'programLayanan'
+            'programLayanan',
+            'jadwal'
         ));
     }
 }

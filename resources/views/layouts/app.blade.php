@@ -4,22 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title')</title>
+    <title>@yield('title') - Ikatan Saudagar Muslim Indonesia</title>
     <link rel="icon" href="{{ asset('favicon.png') }}" type="image/png">
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('css/global.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/header-footer.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/ekatalog.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/berita.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/jadi-anggota.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/buku-informasi.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/info-kegiatan.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/visi-misi.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/active-member.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/sejarah.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/peranan.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/pengurus.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/widget.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet"
@@ -27,6 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7o3V8A4o0p5d6W0ZQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
@@ -120,7 +111,7 @@
             once: true
         });    
     </script>
-
+    @stack('scripts')
 </body>
 
 </html>
