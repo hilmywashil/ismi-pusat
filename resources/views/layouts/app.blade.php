@@ -36,6 +36,8 @@
     <script src="{{ asset('js/script.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- Carousel -->
     <script>
         $(document).ready(function () {
             $('.anggota-carousel').owlCarousel({
@@ -65,6 +67,7 @@
         });
     </script>
 
+    <!-- Carousel -->
     <script>
         $(document).ready(function () {
             $('.showcase-carousel').owlCarousel({
@@ -86,6 +89,8 @@
         });
 
     </script>
+
+    <!-- Scroll to Top -->
     <script>
         const btnTop = document.getElementById("btnTop");
 
@@ -104,6 +109,8 @@
             });
         });
     </script>
+
+    <!-- Animate On Scroll -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({
