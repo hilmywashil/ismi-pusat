@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akun Anda Disuspensi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ff4d4d, #ff8080);
+        }
+        .suspend-card {
+            background: #fff;
+            max-width: 420px;
+            width: 90%;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+        h1 {
+            margin: 0 0 12px;
+            font-size: 24px;
+            color: #e53935;
+        }
+        p {
+            margin: 0 0 20px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .info {
+            background: #f9f9f9;
+            border-left: 4px solid #e53935;
+            padding: 12px 16px;
+            text-align: left;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #444;
+        }
+        .actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: 0.2s ease;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: #e53935;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #d32f2f;
+        }
+        .btn-secondary {
+            background: #eee;
+            color: #333;
+        }
+        .btn-secondary:hover {
+            background: #ddd;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="suspend-card">
+        <div class="icon">🚫</div>
+        <h1>Akun Anda Disuspensi</h1>
+        <p>
+            Mohon maaf, akun Anda saat ini <strong>tidak dapat diakses</strong> karena melanggar kebijakan
+            atau terdapat aktivitas yang tidak wajar.
+        </p>
+
+        <div class="info">
+            <strong>Kemungkinan penyebab:</strong>
+            <ul>
+                <li>Pelanggaran syarat dan ketentuan</li>
+                <li>Aktivitas mencurigakan</li>
+                <li>Masalah administrasi atau pembayaran</li>
+            </ul>
+        </div>
+
+        <div class="actions">
+            <a href="/  " class="btn btn-primary">Hubungi Support</a>
+            <a href="/" class="btn btn-secondary">Kembali ke Beranda</a>
+        </div>
+
+        <div class="footer">
+            © 2026 <b>CyberLabs</b>. Semua Hak Dilindungi.
+        </div>
+    </div>
+</body>
+</html>

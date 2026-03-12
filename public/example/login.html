@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Admin - ISMI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- LEFT SIDE -->
+        <div class="left">
+            <div class="overlay"></div>
+
+            <div class="left-content">
+                <p>
+                    ISMI Ikatan Saudagar Muslim se-Indonesia (ISMI) adalah institusi
+                    perkumpulan Saudagar Muslim Seluruh Indonesia
+                </p>
+
+                <div class="social">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="right">
+
+            <div class="logo">
+                <img src="logo.png" alt="ISMI">
+            </div>
+
+            <div class="form-wrapper">
+                <h1>Login Admin</h1>
+
+                <form>
+
+                    <div class="input-group">
+                        <label>Nama Pengguna atau Alamat Email</label>
+                        <div class="input-field">
+                            <input type="text" placeholder="Masukan Email atau Username">
+                            <i class="fa-regular fa-user icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Password</label>
+                        <div class="input-field">
+                            <input type="password" id="password" placeholder="Masukan Password">
+                            <i class="fa-regular fa-eye icon toggle"></i>
+                        </div>
+                    </div>
+
+                    <div class="action">
+                        <button type="submit">Masuk</button>
+                        <a href="#">Lupa kata sandi?</a>
+                    </div>
+
+                    <p class="alt">
+                        Bukan Admin?
+                        <a href="#">Login sebagai anggota</a>
+                    </p>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const toggle = document.querySelector(".toggle");
+        const password = document.getElementById("password");
+
+        toggle.addEventListener("click", () => {
+            if (password.type === "password") {
+                password.type = "text";
+                toggle.classList.remove("fa-eye");
+                toggle.classList.add("fa-eye-slash");
+            } else {
+                password.type = "password";
+                toggle.classList.remove("fa-eye-slash");
+                toggle.classList.add("fa-eye");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
