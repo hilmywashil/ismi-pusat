@@ -11,13 +11,13 @@
                 <h1>Selamat datang di<br>Website Resmi ISMI !</h1>
             </div>
             <div class="buttons" data-aos="fade-up">
-                <a href="{{ route('about') }}" class="btn">Tentang Kami</a>
-                <a href="{{ route('about') }}" class="btn-border">Kontak Kami</a>
+                <a href="{{ route('about-us') }}" class="btn">Tentang Kami</a>
+                <a href="{{ route('contact') }}" class="btn-border">Kontak Kami</a>
             </div>
             <div class="social" data-aos="fade-up">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.facebook.com/people/ismipusatofficial/100076381354393/" target="blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/ismipusatofficial/" target="blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCiidhkFzSkyjjDYVxLqivJQ" target="blank"><i class="fa-brands fa-youtube"></i></a>
             </div>
             <img src="{{ asset('images/mosque.png') }}" class="mosque">
         </div>
@@ -102,7 +102,7 @@
                         menciptakan ekosistem ekonomi yang inklusif dan berdampak luas.
                     </p>
                 </div>
-                <a href="#" class="btn-green">Selengkapnya Tentang Kami</a>
+                <a href="{{ route('about-us') }}" class="btn-green">Selengkapnya Tentang Kami</a>
             </div>
         </div>
     </section>
@@ -133,7 +133,7 @@
                     </div>
                 </a>
             </div>
-            <a href="#" class="btn-green">Lihat Semua Anggota</a>
+            <a href="{{ route('e-katalog') }}" class="btn-green">Lihat Semua Anggota</a>
         </div>
     </section>
     <section class="wrapper-green">
@@ -144,7 +144,7 @@
                     <h1>Beberapa Produk ISMI untuk mendukung Bisnis yang Anda Miliki</h1>
                 </div>
                 <p>Lihat dan optimalkan produk yang sudah disediakan</p>
-                <a href="#" class="btn-white">Lihat Produk Kami</a>
+                <a href="{{ route('produk-ismi') }}" class="btn-white">Lihat Produk Kami</a>
             </div>
             <div class="right">
                 <img src="{{ asset('images/mosque-shape.png') }}" alt="Mosque Shape">
@@ -166,7 +166,9 @@
                             <h3><b>Ilham Akbar Habibie dikukuhkan kembali sebagai Ketua Umum ISMI</b></h3>
                             <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
                             </p>
-                            <p>Baca Selengkapnya</p>
+                            <div class="read">
+                                <p>Baca Selengkapnya</p>
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -177,7 +179,9 @@
                             <h3><b>Ilham Akbar Habibie dikukuhkan kembali sebagai Ketua Umum ISMI</b></h3>
                             <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
                             </p>
-                            <p>Baca Selengkapnya</p>
+                            <div class="read">
+                                <p>Baca Selengkapnya</p>
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -188,12 +192,55 @@
                             <h3><b>Ilham Akbar Habibie dikukuhkan kembali sebagai Ketua Umum ISMI</b></h3>
                             <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
                             </p>
-                            <p>Baca Selengkapnya</p>
+                            <div class="read">
+                                <p>Baca Selengkapnya</p>
+                            </div>
                         </div>
                     </div>
                 </a>
             </div>
-            <a href="#" class="btn-green">Lihat Semua Berita</a>
+            <a href="{{ route('berita') }}" class="btn-green">Lihat Semua Berita</a>
+        </div>
+    </section>
+    <section class="wrapper-white-2">
+        <div class="sponsor" data-aos="fade-up">
+            <div class="section-head">
+                <span class="label">Sponsor</span>
+                <h1>Sponsor Kami</h1>
+                <p>Bersama Membangun Masa Depan</p>
+            </div>
+            <div class="grid">
+                <div class="sponsor-card">
+                    <img src="{{ asset('images/sponsor/sponsor_1.jpg') }}" alt="Sponsor">
+                </div>
+                <div class="sponsor-card">
+                    <img src="{{ asset('images/sponsor/sponsor_2.jpg') }}" alt="Sponsor">
+                </div>
+                <div class="sponsor-card">
+                    <img src="{{ asset('images/sponsor/sponsor_3.jpg') }}" alt="Sponsor">
+                </div>
+                <div class="sponsor-card">
+                    <img src="{{ asset('images/sponsor/sponsor_4.jpg') }}" alt="Sponsor">
+                </div>
+                <div class="sponsor-card">
+                    <img src="{{ asset('images/sponsor/sponsor_5.jpg') }}" alt="Sponsor">
+                </div>
+                <div class="sponsor-card">
+                    <img src="{{ asset('images/sponsor/sponsor_6.jpg') }}" alt="Sponsor">
+                </div>
+                <div class="sponsor-card">
+                    <img src="{{ asset('images/sponsor/sponsor_7.jpg') }}" alt="Sponsor">
+                </div>
+                <div class="sponsor-card">
+                    <img src="{{ asset('images/sponsor/sponsor_8.jpg') }}" alt="Sponsor">
+                </div>
+                <div class="sponsor-card">
+                    <img src="{{ asset('images/sponsor/sponsor_9.jpg') }}" alt="Sponsor">
+                </div>
+                <div class="sponsor-card">
+                    <img src="{{ asset('images/sponsor/sponsor_10.jpg') }}" alt="Sponsor">
+                </div>
+            </div>
         </div>
     </section>
 @endsection

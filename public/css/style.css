@@ -7,6 +7,7 @@ h4 {
 }
 
 p {
+    font-size: 15px;
     line-height: 1.7;
 }
 
@@ -32,6 +33,34 @@ a {
     background-repeat: no-repeat;
 }
 
+.wrapper-mosque-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 150px 50px 150px 50px;
+    background-image:
+        linear-gradient(rgba(1, 89, 49, 0.6), rgba(1, 89, 49, 0.6)),
+        url('../images/bg-mosque.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.wrapper-quran-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 50px 100px 50px;
+    background-image:
+        linear-gradient(rgba(1, 89, 49, 0.6), rgba(1, 89, 49, 0.6)),
+        url('../images/bg-quran.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .wrapper-white-1 {
     width: 100%;
     display: flex;
@@ -48,6 +77,15 @@ a {
     justify-content: center;
     align-items: center;
     padding: 100px 50px 100px 50px;
+}
+
+.wrapper-white-3 {
+    width: 100%;
+    display: flex;
+    background-color: #F1F5F8;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 50px 100px 50px;
 }
 
 .wrapper-green {
@@ -82,6 +120,8 @@ a {
 
     .wrapper-white-1,
     .wrapper-white-2,
+    .wrapper-white-3,
+    .wrapper-mosque-page,
     .wrapper-green {
         padding: 50px 20px 50px 20px;
     }
@@ -307,6 +347,7 @@ footer {
 .footer-item h3 {
     font-size: 25px;
     margin-bottom: 12px;
+    color: #ff6a00;
 }
 
 .footer-item p {
@@ -318,6 +359,10 @@ footer {
     flex-direction: row;
     align-items: center;
     margin-bottom: 15px;
+}
+
+.footer-item-child i {
+    color: #ff6a00;
 }
 
 .footer-item-child p {
@@ -366,6 +411,11 @@ footer {
 
 .footer-social img {
     width: 50px;
+    transition: all 0.3s;
+}
+
+.footer-social img:hover {
+    transform: scale(1.1);
 }
 
 .footer-social-icons {
@@ -486,11 +536,16 @@ footer {
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    transition: all 0.3s;
 }
 
 .hero .social i {
     color: white;
     font-size: 20px;
+}
+
+.hero .social a:hover {
+    transform: scale(1.1);
 }
 
 .hero .mosque {
@@ -719,6 +774,11 @@ footer {
     .product-home {
         flex-direction: column;
     }
+
+    .product-home .left h1 {
+        font-size: 30px;
+    }
+
 }
 
 /* ========== BERITA HOME ========== */
@@ -744,3 +804,588 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* ========== SPONSOR HOME ========== */
+.sponsor {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.sponsor .grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+@media(max-width: 1024px) {
+    .sponsor .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =================================================================================
+================================[ ABOUT PAGE ]====================================
+================================================================================= */
+
+/* ========== ABOUT HERO ========== */
+.about-hero {
+    width: 100%;
+    max-width: 1400px;
+    gap: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    color: #FFFFFF;
+}
+
+.about-hero h1 {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.about-hero h2 {
+    margin: 0;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.about-hero .heading {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.about-hero .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+}
+
+.about-hero i {
+    margin-left: 10px;
+}
+
+@media (max-width: 1024px) {
+    .about-hero h1 {
+        font-size: 35px;
+    }
+
+    .about-hero h2 {
+        font-size: 20px;
+    }
+}
+
+/* ========== ABOUT ========== */
+.about {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    gap: 50px;
+}
+
+.about .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about .left h1 {
+    color: #015931;
+    font-size: 30px;
+}
+
+.about .left .content {
+    display: flex;
+    flex-direction: column;
+}
+
+.about .left .content p {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.about .left .content ul {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.about .left .content li {
+    margin-bottom: 8px;
+}
+
+.about .right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about .right img {
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .about {
+        flex-direction: column-reverse;
+    }
+}
+
+/* ========== SEJARAH ========== */
+.sejarah {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    gap: 50px;
+}
+
+.sejarah .left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sejarah .left img {
+    width: 100%;
+}
+
+.sejarah .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sejarah .right h1 {
+    color: #ff6a00;
+    font-size: 30px;
+}
+
+.sejarah .right .content {
+    display: flex;
+    flex-direction: column;
+}
+
+.sejarah .right .content p {
+    font-size: 15px;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.sejarah .right .content ul {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.sejarah .right .content li {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 1024px) {
+    .sejarah {
+        flex-direction: column-reverse;
+    }
+}
+
+/* ========== VISI MISI ========== */
+
+.visi-misi {
+    display: flex;
+    flex-direction: row;
+}
+
+.visi-misi .left,
+.visi-misi .right {
+    flex: 0 0 50%;
+}
+
+.visi-misi .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 30px;
+    padding: 100px 50px;
+}
+
+.visi-misi .left h1 {
+    color: #015931;
+    font-size: 30px;
+}
+
+.visi-misi .left h2 {
+    color: #015931;
+    margin-bottom: 10px;
+}
+
+.visi-misi .right {
+    display: flex;
+}
+
+.visi-misi .right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .visi-misi {
+        flex-direction: column-reverse;
+    }
+
+    .visi-misi .left,
+    .visi-misi .right {
+        flex: 100%;
+        width: 100%;
+    }
+
+    .visi-misi .left {
+        padding: 50px 20px;
+    }
+}
+
+/* ========== TAGLINE ========== */
+
+.tagline {
+    display: flex;
+    flex-direction: row;
+}
+
+.tagline .left,
+.tagline .right {
+    flex: 0 0 50%;
+}
+
+.tagline .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 30px;
+    padding: 100px 50px;
+}
+
+.tagline .right p {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.tagline .right ul {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.tagline .right li {
+    margin-bottom: 8px;
+    list-style: decimal;
+}
+
+
+.tagline .right h1 {
+    color: #015931;
+    font-size: 30px;
+}
+
+.tagline .right h2 {
+    color: #015931;
+    margin-bottom: 10px;
+}
+
+.tagline .left {
+    display: flex;
+}
+
+.tagline .left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .tagline {
+        flex-direction: column;
+    }
+
+    .tagline .left,
+    .tagline .right {
+        flex: 100%;
+        width: 100%;
+    }
+
+    .tagline .right {
+        padding: 50px 20px;
+    }
+}
+
+/* =================================================================================
+=================================[ BERITA PAGE ]===================================
+================================================================================= */
+
+.berita-highlight {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    gap: 50px;
+}
+
+.berita-highlight .left {
+    flex: 1;
+}
+
+.berita-highlight .left img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.berita-highlight .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+}
+
+.berita-highlight .right h1 {
+    color: #015931;
+    font-size: 30px;
+}
+
+.berita-highlight .right .read {
+    color: #015931;
+}
+
+@media (max-width: 1024px) {
+    .berita-highlight {
+        flex-direction: column;
+    }
+
+    .berita-highlight .left img {
+        height: 200px;
+    }
+
+    .berita-highlight .right h1 {
+        font-size: 25px;
+    }
+
+}
+
+/* =================================================================================
+=============================[ ANGGOTA/KATALOG PAGE ]===============================
+================================================================================= */
+/* ========== ABOUT HERO ========== */
+.katalog-hero {
+    width: 100%;
+    max-width: 1400px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.katalog-hero h1 {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.katalog-hero h2 {
+    margin: 0;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+    .katalog-hero h1 {
+        font-size: 35px;
+    }
+
+    .katalog-hero h2 {
+        font-size: 20px;
+    }
+}
+
+.detail-katalog-logo {
+    display: flex;
+    justify-content: end;
+}
+
+.detail-katalog-photo {
+    display: flex;
+    justify-content: end;
+}
+
+.detail-katalog-photo img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: #04293B 2px solid;
+}
+
+.detail-katalog-logo img {
+    width: 500px;
+    height: auto;
+    object-fit: contain;
+}
+
+.detail-katalog-texts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 50px 100px 50px;
+}
+
+.detail-katalog-text {
+    width: 100%;
+    max-width: 1500px;
+}
+
+.detail-katalog-text p {
+    text-align: justify;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.details-katalog-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 50px 100px 50px;
+}
+
+.detail-katalog-images {
+    width: 100%;
+    max-width: 1500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.detail-katalog-images img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border: #04293B 1px solid;
+    border-radius: 20px;
+}
+
+.detail-katalog-contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 50px 100px 50px;
+}
+
+.detail-katalog-contact-map {
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    flex-direction: row;
+}
+
+.detail-katalog-contact {
+    flex: 1;
+}
+
+.detail-katalog-contact h1 {
+    margin-bottom: 50px;
+}
+
+.detail-katalog-map {
+    flex: 1;
+}
+
+.map-embed {
+    width: 700px;
+    height: 450px;
+    border: 1px solid #04293B;
+    border-radius: 20px;
+}
+
+@media (max-width: 1024px) {
+
+    .detail-katalog-logo img {
+        width: 100%;
+    }
+
+    .detail-katalog-photo img {
+        width: 100%;
+        height: 300px;
+    }
+
+    .detail-katalog-logo {
+        justify-content: center;
+    }
+
+    .detail-katalog-photo {
+        justify-content: center;
+    }
+
+    .detail-katalog-texts {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 20px 50px 20px;
+    }
+
+
+    .detail-katalog-images {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+
+    .details-katalog-images {
+        padding: 0px 20px 50px 20px;
+    }
+
+    .detail-katalog-images img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .detail-katalog-text p {
+        text-align: justify;
+        font-size: 12px;
+    }
+
+    .detail-katalog-contacts {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 20px 50px 20px;
+    }
+
+    .detail-katalog-contact-map {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .map-embed {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+/* =================================================================================
+=============================[ PRODUK PAGE ]===============================
+================================================================================= */
+

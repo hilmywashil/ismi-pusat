@@ -203,22 +203,15 @@ Route::middleware('auth:anggota')->group(function () {
 });
 
 // Other Routes
-Route::view('/informasi-kegiatan', 'pages.informasi-kegiatan')->name('informasi-kegiatan');
 Route::view('/detail-kegiatan', 'pages.details.kegiatan-detail')->name('detail-kegiatan');
+Route::view('/about', 'pages.about')->name('about-us');
 Route::view('/history', 'pages.sejarah')->name('about');
 Route::view('/vision-mission', 'pages.visi-misi')->name('vision-mission');
 Route::view('/peranan-ismi', 'pages.peranan-ismi')->name('peranan-ismi');
-Route::view('/how-to-join', 'pages.how-to-join')->name('how-to-join');
 Route::view('/contact', 'pages.contact')->name('contact');
 Route::view('/join-us', 'pages.join-us')->name('join-us');
 Route::view('/susunan-pengurus', 'pages.susunan-pengurus')->name('susunan-pengurus');
 
-Route::get('/active-member-asita', [KatalogController::class, 'letter'])->name('active-member');
-Route::get('/outline-of-asita', [OutlineController::class, 'index'])->name('outline');
 Route::get('/products', [ProductController::class, 'index'])->name('produk-ismi');
 
 Route::get('/kegiatan', [BeritaController::class, 'kegiatan'])->name('kegiatan');
-
-// Buku Anggota Routes
-Route::get('/buku-informasi-anggota', [BukuAnggotaController::class, 'index'])->name('buku-anggota');
-Route::get('/buku-informasi-anggota/{anggota}', [BukuAnggotaController::class, 'show'])->name('detail-buku');

@@ -1,65 +1,76 @@
 @extends('layouts.app')
 
-@section('title', 'Produk ISMI - Ikatan Saudagar Muslim Indonesia Jawa Barat')
-
-<style>
-    .products-grids {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        padding: 0px 50px 100px 50px;
-    }
-
-    .products-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        width: 100%;
-        max-width: 1500px;
-        gap: 20px;
-    }
-
-    .product-dummy {
-        width: 100%;
-        border-radius: 20px;
-        transition: all 0.3s;
-    }
-
-    .product-dummy:hover {
-        transform: translateY(-10px);
-        cursor: pointer;
-    }
-
-    @media (max-width: 1024px) {
-        .products-grids {
-            padding: 0px 20px 50px 20px;
-        }
-
-        .products-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .product-dummy {
-            border-radius: 15px;
-        }
-    }
-</style>
+@section('title', 'Produk ISMI')
 
 @section('content')
-    <section class="page-banners">
-        <div class="page-banner">
-            <span class="label">Katalog</span>
-            <h1>Produk ISMI</h1>
-            <p>Katalog Produk ISMI</p>
+    <section class="wrapper-quran-page">
+        <div class="katalog-hero" data-aos="fade-up">
+            <h2>Produk ISMI</h2>
+            <h1>Inovasi yang Mengubah Cara Kerja</h1>
         </div>
     </section>
-    <section class="products-grids">
-        <div class="products-grid">
-            @forelse ($products as $product)
-                <img class="product-dummy" src="{{ asset('storage/' . $product->image) }}">
-            @empty
-                <img class="product-dummy" src="{{ asset('images/products/ismi-bank.jpg') }}">
-            @endforelse
+
+    <section class="wrapper-white-2">
+        <div class="berita-home" data-aos="fade-up">
+            <div class="search-bar">
+                <form action="{{ route('berita') }}" method="GET" class="search-box">
+                    <input type="text" name="search" placeholder="Cari Berita..." value="{{ request('search') }}">
+                    <button type="submit" style="background: none; border: none; cursor: pointer;">
+                    </button>
+                </form>
+            </div>
+            <div class="grid">
+                <a href="#">
+                    <div class="berita-card">
+                        <img src="{{ asset('images/products/ismi-bank.jpg') }}" alt="Anggota ISMI">
+                        <div class="container">
+                            <h3><b>ISMI Bank</b></h3>
+                            <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
+                            </p>
+                            <div class="read">
+                                <p>Lihat Selengkapnya</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            @if ($products->isEmpty())
+                <div style="margin-top: 0px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;">
+
+                    {{-- Previous --}}
+                    <a href="#"
+                        style="padding: 8px 14px; border-radius: 8px; background: #065f46; color: #fff; font-size: 14px; text-decoration: none;">
+                        < </a>
+
+                            {{-- Page Numbers --}}
+                            <a href="#"
+                                style="padding: 8px 14px; border-radius: 8px; border: 1px solid #047857; color: #047857; font-size: 14px; text-decoration: none;">
+                                1
+                            </a>
+
+                            <span
+                                style="padding: 8px 14px; border-radius: 8px; background: #047857; color: #fff; font-size: 14px; font-weight: 600;">
+                                2
+                            </span>
+
+                            <a href="#"
+                                style="padding: 8px 14px; border-radius: 8px; border: 1px solid #047857; color: #047857; font-size: 14px; text-decoration: none;">
+                                3
+                            </a>
+
+                            <a href="#"
+                                style="padding: 8px 14px; border-radius: 8px; border: 1px solid #047857; color: #047857; font-size: 14px; text-decoration: none;">
+                                4
+                            </a>
+
+                            {{-- Next --}}
+                            <a href="#"
+                                style="padding: 8px 14px; border-radius: 8px; background: #065f46; color: #fff; font-size: 14px; text-decoration: none;">
+                                >
+                            </a>
+
+                </div>
+            @endif
         </div>
     </section>
 @endsection
