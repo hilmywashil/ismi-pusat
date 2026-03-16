@@ -13,26 +13,31 @@
     <section class="wrapper-white-2">
         <div class="berita-home" data-aos="fade-up">
             <div class="search-bar">
-                <form action="{{ route('berita') }}" method="GET" class="search-box">
-                    <input type="text" name="search" placeholder="Cari Berita..." value="{{ request('search') }}">
+                <form action="{{ route('produk-ismi') }}" method="GET" class="search-box">
+                    <input type="text" name="search" placeholder="Cari Produk..." value="{{ request('search') }}">
                     <button type="submit" style="background: none; border: none; cursor: pointer;">
                     </button>
                 </form>
             </div>
             <div class="grid">
-                <a href="#">
-                    <div class="berita-card">
-                        <img src="{{ asset('images/products/ismi-bank.jpg') }}" alt="Anggota ISMI">
-                        <div class="container">
-                            <h3><b>ISMI Bank</b></h3>
-                            <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
-                            </p>
-                            <div class="read">
-                                <p>Lihat Selengkapnya</p>
+                @forelse($products as $product)
+                    <a href="#">
+                        <div class="berita-card">
+                            <img src="{{ asset('storage/' . $product->image) }}" alt="Anggota ISMI">
+                            <div class="container">
+                                <h3><b>{{ $product->product_name }}</b></h3>
+                                <!-- <p>{{ Str::limit($product->description, 100) }} -->
+                                <p>{{ $product->description }}
+                                </p>
+                                <!-- <div class="read">
+                                    <p>Lihat Selengkapnya</p>
+                                </div> -->
                             </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                @empty
+                    <p>Tidak ada</p>
+                @endforelse
             </div>
             @if ($products->isEmpty())
                 <div style="margin-top: 0px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;">

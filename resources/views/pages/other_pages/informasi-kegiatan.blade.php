@@ -1,11 +1,11 @@
 @extends ('layouts.app')
 
-@section('title', 'Informasi Kegiatan - ISMI Jawa Barat')
+@section('title', 'Informasi Kegiatan - ISMI')
 
 @section('content')
     <section class="page-banner">
         <h1>Informasi Kegiatan BPD</h1>
-        <p>Anggota & Pengurus ISMI Jawa Barat</p>
+        <p>Anggota & Pengurus ISMI</p>
     </section>
 
     <section class="search-katalog">
@@ -23,7 +23,7 @@
                     <img src="{{ asset('images/bg.png') }}" alt="dada">
                 </a>
                 <div class="informasi-kegiatan-card-text">
-                    <h3>Visi dan Misi ISMI Jawa Barat</h3>
+                    <h3>Visi dan Misi ISMI</h3>
                     <p style="margin-bottom: 15px">Oktober 28, 2070</p>
                     <p>{{ Str::limit('Isi berita Lorem ipsum dolor sit amet, consectetur
                                                                     adipiscing elit. Donec ullamcorper, est a
@@ -40,7 +40,7 @@
                     <img src="{{ asset('images/bg.png') }}" alt="dada">
                 </a>
                 <div class="informasi-kegiatan-card-text">
-                    <h3>Visi dan Misi ISMI Jawa Barat</h3>
+                    <h3>Visi dan Misi ISMI</h3>
                     <p style="margin-bottom: 15px">Oktober 28, 2070</p>
                     <p>{{ Str::limit('Isi berita Lorem ipsum dolor sit amet, consectetur
                                                                     adipiscing elit. Donec ullamcorper, est a
@@ -57,7 +57,7 @@
                     <img src="{{ asset('images/bg.png') }}" alt="dada">
                 </a>
                 <div class="informasi-kegiatan-card-text">
-                    <h3>Visi dan Misi ISMI Jawa Barat</h3>
+                    <h3>Visi dan Misi ISMI</h3>
                     <p style="margin-bottom: 15px">Oktober 28, 2070</p>
                     <p>{{ Str::limit('Isi berita Lorem ipsum dolor sit amet, consectetur
                                                                     adipiscing elit. Donec ullamcorper, est a
@@ -74,7 +74,7 @@
                     <img src="{{ asset('images/bg.png') }}" alt="dada">
                 </a>
                 <div class="informasi-kegiatan-card-text">
-                    <h3>Visi dan Misi ISMI Jawa Barat</h3>
+                    <h3>Visi dan Misi ISMI</h3>
                     <p style="margin-bottom: 15px">Oktober 28, 2070</p>
                     <p>{{ Str::limit('Isi berita Lorem ipsum dolor sit amet, consectetur
                                                                     adipiscing elit. Donec ullamcorper, est a

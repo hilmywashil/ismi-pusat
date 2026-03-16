@@ -8,7 +8,7 @@
         <div class="page-banner">
             <span class="label">Kegiatan</span>
             <h1>Kegiatan ISMI</h1>
-            <p>Kegiatan seputar ISMI JABAR</p>
+            <p>Kegiatan seputar ISMI</p>
         </div>
     </section>
 

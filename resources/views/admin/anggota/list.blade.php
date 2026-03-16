@@ -487,7 +487,7 @@
 @section('content')
     <div class="page-header">
         <h1>Daftar Anggota</h1>
-        <p>Lihat data anggota ISMI Jawa Barat</p>
+        <p>Lihat data anggota ISMI</p>
     </div>
 
     {{-- Filter Domisili (Hanya untuk BPD) --}}

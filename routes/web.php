@@ -64,7 +64,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         // ================= DELETE =================
         Route::delete('products/{id}', [AdminProductController::class, 'destroy'])
             ->name('products.destroy');
-            
+
         // Info Admin (BPD only)
         Route::get('info-admin', [AdminDashboardController::class, 'infoAdmin'])->name('info-admin');
         Route::get('create-admin', [AdminDashboardController::class, 'createAdmin'])->name('create-admin');
@@ -215,3 +215,7 @@ Route::view('/susunan-pengurus', 'pages.susunan-pengurus')->name('susunan-pengur
 Route::get('/products', [ProductController::class, 'index'])->name('produk-ismi');
 
 Route::get('/kegiatan', [BeritaController::class, 'kegiatan'])->name('kegiatan');
+
+Route::fallback(function () {
+    return response()->view('errors.404', [], 404);
+});

@@ -23,7 +23,6 @@ class BeritaController extends Controller
         $beritaUtama = $beritaUtamaQuery->first();
 
         $beritas = Berita::active()
-            ->where('category', 'berita')
             ->latestPublish()
             ->when($search, function ($q) use ($search) {
                 $q->where(function ($query) use ($search) {
@@ -31,7 +30,7 @@ class BeritaController extends Controller
                         ->orWhere('konten', 'like', "%{$search}%");
                 });
             })
-            ->paginate(1);
+            ->paginate(9);
 
         $beritaPopuler = Berita::active()
             ->where('category', 'berita')

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Strategic Plan - ISMI JABAR')
+@section('title', 'Strategic Plan - ISMI')
 
 @section('content')
 <section class="strategic-plan">
@@ -11,7 +11,7 @@
         </div>
         <div class="strategic-plan-wrapper">
             <div class="green-accent"></div>
-            <h1>Strategic Plan ISMI JABAR</h1>
+            <h1>Strategic Plan ISMI</h1>
             <div class="strategic-plan-cards">
                 @forelse($tataKelola as $plan)
                     <a href="{{ route('strategic-plan.detail', $plan->id) }}" class="strategic-plan-card">

@@ -65,6 +65,19 @@
     transition: 0.3s;
 }
 
+.btn-border-orange {
+    display: inline-block;
+    padding: 12px 26px;
+    background: transparent;
+    color: #F05B06;
+    border: #F05B06 1px solid;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
 .btn-transparent {
     display: inline-block;
     padding: 12px 30px;
@@ -81,6 +94,7 @@
 .btn:hover,
 .btn-green:hover,
 .btn-border:hover,
+.btn-border-orange:hover,
 .btn-transparent:hover {
     transform: scale(1.05);
 }
@@ -140,7 +154,7 @@
 
 .katalog-card {
     background-color: #ffffff;
-    padding: 50px;
+    padding: 35px;
     text-align: center;
     border-radius: 20px;
     overflow: hidden;

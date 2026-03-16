@@ -6,7 +6,7 @@
 @section('page-title', 'Kelola Pesan')
 
 @php
-$activeMenu = 'kontak';
+    $activeMenu = 'kontak';
 @endphp
 
 @push('styles')
@@ -27,7 +27,7 @@ $activeMenu = 'kontak';
         }
 
         .stat-item {
-            background: linear-gradient(135deg, #0a2540 0%, #164e63 100%);
+            background-color: #015931;
             padding: 1.5rem;
             border-radius: 8px;
             color: white;
@@ -315,6 +315,49 @@ $activeMenu = 'kontak';
                     </tbody>
 
                 </table>
+                @if ($pesan->hasPages())
+                    <div style="margin-top:20px;display:flex;justify-content:end;align-items:center;gap:6px;font-size:13px;">
+
+                        {{-- Previous --}}
+                        @if ($pesan->onFirstPage())
+                            <span style="padding:6px 12px;border:1px solid #e5e7eb;border-radius:6px;color:#9ca3af;">Prev</span>
+                        @else
+                            <a href="{{ $pesan->previousPageUrl() }}"
+                                style="padding:6px 12px;border:1px solid #e5e7eb;border-radius:6px;text-decoration:none;color:#374151;">
+                                Prev
+                            </a>
+                        @endif
+
+
+                        {{-- Page Numbers --}}
+                        @foreach ($pesan->getUrlRange(1, $pesan->lastPage()) as $page => $url)
+
+                            @if ($page == $pesan->currentPage())
+                                <span style="padding:6px 12px;border-radius:6px;background:#0a2540;color:white;font-weight:600;">
+                                    {{ $page }}
+                                </span>
+                            @else
+                                <a href="{{ $url }}"
+                                    style="padding:6px 12px;border:1px solid #e5e7eb;border-radius:6px;text-decoration:none;color:#374151;">
+                                    {{ $page }}
+                                </a>
+                            @endif
+
+                        @endforeach
+
+
+                        {{-- Next --}}
+                        @if ($pesan->hasMorePages())
+                            <a href="{{ $pesan->nextPageUrl() }}"
+                                style="padding:6px 12px;border:1px solid #e5e7eb;border-radius:6px;text-decoration:none;color:#374151;">
+                                Next
+                            </a>
+                        @else
+                            <span style="padding:6px 12px;border:1px solid #e5e7eb;border-radius:6px;color:#9ca3af;">Next</span>
+                        @endif
+
+                    </div>
+                @endif
             @else
                 <div class="empty-state">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="64" height="64">

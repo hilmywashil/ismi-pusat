@@ -7,10 +7,14 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::get();
+        $search = $request->search;
 
-        return view('pages.produk-ismi', compact('products'));
+        $products = Product::when($search, function ($query, $search) {
+            $query->where('product_name', 'like', '%' . $search . '%');
+        })->get();
+
+        return view('pages.produk-ismi', compact('products', 'search'));
     }
 }

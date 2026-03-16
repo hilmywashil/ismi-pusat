@@ -15,9 +15,12 @@
                 <a href="{{ route('contact') }}" class="btn-border">Kontak Kami</a>
             </div>
             <div class="social" data-aos="fade-up">
-                <a href="https://www.facebook.com/people/ismipusatofficial/100076381354393/" target="blank"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/ismipusatofficial/" target="blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.youtube.com/channel/UCiidhkFzSkyjjDYVxLqivJQ" target="blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.facebook.com/people/ismipusatofficial/100076381354393/" target="blank"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/ismipusatofficial/" target="blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCiidhkFzSkyjjDYVxLqivJQ" target="blank"><i
+                        class="fa-brands fa-youtube"></i></a>
             </div>
             <img src="{{ asset('images/mosque.png') }}" class="mosque">
         </div>
@@ -114,24 +117,27 @@
                 <p>Kekuatan Kami Ada Pada Anggota</p>
             </div>
             <div class="grid">
-                <a href="#">
-                    <div class="katalog-card">
-                        <img src="{{ asset('images/h-ilham-habibie.png') }}" alt="Anggota ISMI">
-                        <div class="container">
-                            <h4><b>CyberLabs</b></h4>
-                            <p>Digital Marketing</p>
+                @forelse($katalogs as $katalog)
+                    <a href="{{ route('e-katalog.detail', $katalog->id) }}">
+                        <div class="katalog-card">
+                            <img src="{{ $katalog->logo_url }}" alt="{{ $katalog->company_name }}">
+                            <div class="container">
+                                <h4><b>{{ Str::limit($katalog->company_name, 20, '-') }}</b></h4>
+                                <p>{{ Str::limit($katalog->business_field, 30, '-') }}</p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="katalog-card">
-                        <img src="{{ asset('images/h-ilham-habibie.png') }}" alt="Anggota ISMI">
-                        <div class="container">
-                            <h4><b>CyberLabs</b></h4>
-                            <p>Digital Marketing</p>
+                    </a>
+                @empty
+                    <a href="#">
+                        <div class="katalog-card">
+                            <img src="{{ asset('images/company-logo.webp') }}" alt="Anggota ISMI">
+                            <div class="container">
+                                <h4><b>Nama Perusahaan</b></h4>
+                                <p>Bidang</p>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                @endforelse
             </div>
             <a href="{{ route('e-katalog') }}" class="btn-green">Lihat Semua Anggota</a>
         </div>
@@ -159,45 +165,35 @@
                 <p>Update Berita Terbaru seputar ISMI</p>
             </div>
             <div class="grid">
-                <a href="#">
-                    <div class="berita-card">
-                        <img src="{{ asset('images/ilham-habibie-ketua-umum-ismi.webp') }}" alt="Anggota ISMI">
-                        <div class="container">
-                            <h3><b>Ilham Akbar Habibie dikukuhkan kembali sebagai Ketua Umum ISMI</b></h3>
-                            <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
-                            </p>
-                            <div class="read">
-                                <p>Baca Selengkapnya</p>
+                @forelse($beritas as $berita)
+                    <a href="{{ route('berita-detail', $berita->slug) }}">
+                        <div class="berita-card">
+                            <img src="{{ asset('storage/' . $berita->gambar) }}" alt="Anggota ISMI">
+                            <div class="container">
+                                <h3><b>{{ $berita->judul }}</b></h3>
+                                <p>{{ Str::limit($berita->konten, 100, ' -') }}
+                                </p>
+                                <div class="read">
+                                    <p>Baca Selengkapnya</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="berita-card">
-                        <img src="{{ asset('images/ilham-habibie-ketua-umum-ismi.webp') }}" alt="Anggota ISMI">
-                        <div class="container">
-                            <h3><b>Ilham Akbar Habibie dikukuhkan kembali sebagai Ketua Umum ISMI</b></h3>
-                            <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
-                            </p>
-                            <div class="read">
-                                <p>Baca Selengkapnya</p>
+                    </a>
+                @empty
+                    <a href="#">
+                        <div class="berita-card">
+                            <img src="{{ asset('images/ilham-habibie-ketua-umum-ismi.webp') }}" alt="Anggota ISMI">
+                            <div class="container">
+                                <h3><b>Ilham Akbar Habibie dikukuhkan kembali sebagai Ketua Umum ISMI</b></h3>
+                                <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
+                                </p>
+                                <div class="read">
+                                    <p>Baca Selengkapnya</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="berita-card">
-                        <img src="{{ asset('images/ilham-habibie-ketua-umum-ismi.webp') }}" alt="Anggota ISMI">
-                        <div class="container">
-                            <h3><b>Ilham Akbar Habibie dikukuhkan kembali sebagai Ketua Umum ISMI</b></h3>
-                            <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
-                            </p>
-                            <div class="read">
-                                <p>Baca Selengkapnya</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                @endforelse
             </div>
             <a href="{{ route('berita') }}" class="btn-green">Lihat Semua Berita</a>
         </div>

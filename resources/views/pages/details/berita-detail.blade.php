@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
-@section('title', $berita->judul . ' - Berita ISMI Jawa Barat')
+@section('title', $berita->judul . ' - Berita ISMI')
 
 @push('styles')
     <style>

@@ -8,7 +8,7 @@
                 <img src="{{ asset('favicon.png') }}" alt="ISMI Logo">
             </div>
             <div class="brand-text" style="margin-left: 20px;">
-                <div class="brand-title">ISMI JABAR</div>
+                <div class="brand-title">ISMI</div>
                 <div class="brand-subtitle">Admin Panel</div>
             </div>
         </div>
@@ -105,7 +105,7 @@
             <div class="menu-label">Halaman Website</div>
 
             {{-- Beranda Dropdown --}}
-            <div class="menu-dropdown">
+            <!-- <div class="menu-dropdown">
                 <div class="menu-item has-dropdown {{ in_array($activeMenu, ['beranda', 'misi']) ? 'active' : '' }}"
                     onclick="toggleDropdown(this)">
                     <div style="display: flex; align-items: center; gap: 1rem; flex: 1;">
@@ -130,7 +130,7 @@
                         <span>Lihat Halaman</span>
                     </a>
                 </div>
-            </div>
+            </div> -->
 
             {{-- Organisasi Dropdown --}}
             <div class="menu-dropdown">

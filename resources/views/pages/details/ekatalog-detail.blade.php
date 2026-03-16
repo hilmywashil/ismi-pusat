@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $katalog->company_name . ' - E-Katalog ISMI Jawa Barat')
+@section('title', $katalog->company_name . ' - E-Katalog ISMI')
 
 @section('content')
     <section class="page-banners">

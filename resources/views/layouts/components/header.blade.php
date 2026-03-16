@@ -16,9 +16,12 @@
 
             <div class="menu" id="menu">
                 <a href="{{ route('home') }}" class="nav-link {{ Request::routeIs('home') ? 'active' : '' }}">
-                    Home
+                    Beranda
                 </a>
-                <div class="dropdown">
+                <a href="{{ route('about-us') }}" class="nav-link {{ Request::routeIs('about-us') ? 'active' : '' }}">
+                    Tentang
+                </a>
+                <!-- <div class="dropdown">
                     <a href="javascript:void(0)"
                         class="nav-link dropdown-toggle {{ Request::routeIs('about-us', 'susunan-pengurus') ? 'active' : '' }}">
                         Profile <i class="fa fa-caret-down"></i>
@@ -28,23 +31,23 @@
                         <a href="{{ route('about-us') }}" class="{{ Request::routeIs('about-us') ? 'active' : '' }}">
                             Tentang ISMI
                         </a>
-                        <!-- <a href="{{ route('about') }}" class="{{ Request::routeIs('about') ? 'active' : '' }}">
+                        <a href="{{ route('about') }}" class="{{ Request::routeIs('about') ? 'active' : '' }}">
                             Sejarah
                         </a>
                         <a href="{{ route('vision-mission') }}"
                             class="{{ Request::routeIs('vision-mission') ? 'active' : '' }}">
                             Visi Misi
-                        </a> -->
+                        </a>
                         <a href="{{ route('susunan-pengurus') }}"
                             class="{{ Request::routeIs('susunan-pengurus') ? 'active' : '' }}">
                             Pengurus
                         </a>
-                        <!-- <a href="{{ route('peranan-ismi') }}"
+                        <a href="{{ route('peranan-ismi') }}"
                             class="{{ Request::routeIs('peranan-ismi') ? 'active' : '' }}">
                             Peranan ISMI
-                        </a> -->
+                        </a>
                     </div>
-                </div>
+                </div> -->
                 <a href="{{ route('berita') }}" class="nav-link {{ Request::routeIs('berita') ? 'active' : '' }}">
                     Berita
                 </a>
@@ -68,11 +71,11 @@
                     @else
                         @auth('anggota')
                             {{-- Jika login sebagai Anggota --}}
-                            <a href="{{ route('profile-anggota') }}" class="btn-transparent">Profile Anggota</a>
+                            <a href="{{ route('profile-anggota') }}" class="btn-border-orange">Profile Anggota</a>
                         @else
                             {{-- Jika belum login (Guest) --}}
                             <a href="{{ route('anggota.login') }}" class="btn">Masuk</a>
-                            <!-- <a href="{{ route('jadi-anggota') }}" class="btn-transparent">Gabung</a> -->
+                            <a href="{{ route('jadi-anggota') }}" class="btn-border-orange">Gabung</a>
                         @endauth
                     @endauth
                 </div>
@@ -85,11 +88,11 @@
                 @else
                     @auth('anggota')
                         {{-- Jika login sebagai Anggota --}}
-                        <a href="{{ route('profile-anggota') }}" class="btn-transparent">Profile Anggota</a>
+                        <a href="{{ route('profile-anggota') }}" class="btn-border-orange">Profile Anggota</a>
                     @else
                         {{-- Jika belum login (Guest) --}}
                         <a href="{{ route('anggota.login') }}" class="btn">Masuk</a>
-                        <!-- <a href="{{ route('jadi-anggota') }}" class="btn-transparent">Gabung</a> -->
+                        <a href="{{ route('jadi-anggota') }}" class="btn-border-orange">Gabung</a>
                     @endauth
                 @endauth
             </div>

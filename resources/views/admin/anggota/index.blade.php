@@ -379,7 +379,7 @@
                 <h1>Kelola Anggota</h1>
                 <p>
                     @if($admin->category === 'bpd')
-                        Lihat semua anggota ISMI Jawa Barat (Read-Only)
+                        Lihat semua anggota ISMI (Read-Only)
                     @else
                         Kelola dan verifikasi pendaftaran anggota {{ $admin->domisili }}
                     @endif

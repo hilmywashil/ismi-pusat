@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>{{ Request::is('admin/login') ? 'Login Admin' : 'Login Anggota' }} - ISMI Jawa Barat</title>
+  <title>{{ Request::is('admin/login') ? 'Login Admin' : 'Login Anggota' }} - ISMI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="{{ asset('favicon.png') }}" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">

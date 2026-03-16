@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Profile Anggota - ISMI Jawa Barat')
+@section('title', 'Profile Anggota - ISMI')
 
 @section('content')
 <style>

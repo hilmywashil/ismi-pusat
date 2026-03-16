@@ -10,7 +10,7 @@ class AdminKontakController extends Controller
 {
     public function index()
     {
-        $pesan = Kontak::get();
+        $pesan = Kontak::latest()->paginate(10);
 
         return view('admin.kontak.index', compact('pesan'));
     }

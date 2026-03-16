@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Jadi Anggota - ISMI Jawa Barat')
+@section('title', 'Jadi Anggota - ISMI')
 {{-- Success/Error Messages --}}
 @if(session('success'))
 <div class="alert alert-success">
@@ -48,9 +48,9 @@
 
 <section class="ja-page-banner">
     <h1>Jadi Anggota</h1>
-    <p>Formulir Pendaftaran Calon Anggota Baru ISMI Jawa Barat</p>
+    <p>Formulir Pendaftaran Calon Anggota Baru ISMI</p>
     <div class="rules">
-        <p>Data yang masuk hanya akan dipergunakan untuk kepentingan proses rekrutmen anggota baru ISMI Jawa Barat.
+        <p>Data yang masuk hanya akan dipergunakan untuk kepentingan proses rekrutmen anggota baru ISMI.
             Harap isi dengan benar dan sebaik-baiknya.</p>
         <h3>Syarat & Ketentuan Pendaftaran</h3>
         <p>1. Pengusaha Pria/Wanita berusia 17-40 Tahun<br>2. Usaha harus memiliki badan hukum berbentuk PT, CV, atau PT
@@ -449,7 +449,7 @@
                                 style="margin-top: 4px; width: 18px; height: 18px; cursor: pointer;">
                             <span style="font-size: 15px; line-height: 1.6;">
                                 Dengan ini saya menyatakan bahwa data yang saya isi adalah <strong>benar dan valid</strong>,
-                                serta bersedia mengikuti seluruh tahapan seleksi keanggotaan ISMI Jawa Barat.
+                                serta bersedia mengikuti seluruh tahapan seleksi keanggotaan ISMI.
                                 <span class="required" style="color: #dc3545;">*</span>
                             </span>
                         </label>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Registrasi UMKM - ISMI Jawa Barat')
+@section('title', 'Registrasi UMKM - ISMI')
 
 {{-- Success/Error Messages --}}
 @if(session('success'))

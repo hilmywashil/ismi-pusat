@@ -4,26 +4,27 @@
 
 
 @section('content')
-    <section class="wrapper-white-2">
-        <div class="berita-highlight" data-aos="fade-up">
-            <div class="left">
-                <a href="#">
-                    <img src="{{ asset('images/ilham-habibie-ketua-umum-ismi.webp') }}" alt="Article">
-                </a>
+    @if ($beritaUtama)
+        <section class="wrapper-white-2">
+            <div class="berita-highlight" data-aos="fade-up">
+                <div class="left">
+                    <a href="{{ route('berita-detail', $beritaUtama->slug) }}">
+                        <img src="{{ asset('storage/' . $beritaUtama->gambar) }}" alt="Article">
+                    </a>
+                </div>
+                <div class="right">
+                    <span class="label">Terbaru</span>
+                    <a href="{{ route('berita-detail', $beritaUtama->slug) }}">
+                        <h1>{{ $beritaUtama->judul }}</h1>
+                    </a>
+                    <p>{{ $beritaUtama->tanggal_format }}</p>
+                    <p>{{ Str::limit($beritaUtama->konten, 200) }}</p>
+                    <a href="{{ route('berita-detail', $beritaUtama->slug) }}" class="read">
+                        Baca Selengkapnya</a>
+                </div>
             </div>
-            <div class="right">
-                <span class="label">Berita</span>
-                <a href="#">
-                    <h1>Ilham Akbar Habibie dikukuhkan kembali sebagai Ketua Umum ISMI</h1>
-                </a>
-                <p>Senin, 14 Desember 2025</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam....</p>
-                <a href="#" class="read">Baca Selengkapnya</a>
-            </div>
-        </div>
-    </section>
+        </section>
+    @endif
     <section class="wrapper-white-3">
         <div class="berita-home" data-aos="fade-up">
             <div class="search-bar">
@@ -34,123 +35,23 @@
                 </form>
             </div>
             <div class="grid">
-                <a href="#">
-                    <div class="berita-card">
-                        <img src="{{ asset('images/ilham-habibie-ketua-umum-ismi.webp') }}" alt="Anggota ISMI">
-                        <div class="container">
-                            <h3><b>Ilham Akbar Habibie dikukuhkan kembali sebagai Ketua Umum ISMI</b></h3>
-                            <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
-                            </p>
-                            <div class="read">
-                                <p>Baca Selengkapnya</p>
+                @forelse($beritas as $berita)
+                    <a href="{{ route('berita-detail', $berita->slug) }}">
+                        <div class="berita-card">
+                            <img src="{{ asset('storage/' . $berita->gambar) }}" alt="Anggota ISMI">
+                            <div class="container">
+                                <h3><b>{{ $berita->judul }}</b></h3>
+                                <p>{{ Str::limit($berita->konten, 100, ' -') }}
+                                </p>
+                                <div class="read">
+                                    <p>Baca Selengkapnya</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="berita-card">
-                        <img src="{{ asset('images/ilham-habibie-ketua-umum-ismi.webp') }}" alt="Anggota ISMI">
-                        <div class="container">
-                            <h3><b>Ilham Akbar Habibie dikukuhkan kembali sebagai Ketua Umum ISMI</b></h3>
-                            <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
-                            </p>
-                            <div class="read">
-                                <p>Baca Selengkapnya</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="berita-card">
-                        <img src="{{ asset('images/ilham-habibie-ketua-umum-ismi.webp') }}" alt="Anggota ISMI">
-                        <div class="container">
-                            <h3><b>Ilham Akbar Habibie dikukuhkan kembali sebagai Ketua Umum ISMI</b></h3>
-                            <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
-                            </p>
-                            <div class="read">
-                                <p>Baca Selengkapnya</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="berita-card">
-                        <img src="{{ asset('images/ilham-habibie-ketua-umum-ismi.webp') }}" alt="Anggota ISMI">
-                        <div class="container">
-                            <h3><b>Ilham Akbar Habibie dikukuhkan kembali sebagai Ketua Umum ISMI</b></h3>
-                            <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
-                            </p>
-                            <div class="read">
-                                <p>Baca Selengkapnya</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="berita-card">
-                        <img src="{{ asset('images/ilham-habibie-ketua-umum-ismi.webp') }}" alt="Anggota ISMI">
-                        <div class="container">
-                            <h3><b>Ilham Akbar Habibie dikukuhkan kembali sebagai Ketua Umum ISMI</b></h3>
-                            <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
-                            </p>
-                            <div class="read">
-                                <p>Baca Selengkapnya</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="berita-card">
-                        <img src="{{ asset('images/ilham-habibie-ketua-umum-ismi.webp') }}" alt="Anggota ISMI">
-                        <div class="container">
-                            <h3><b>Ilham Akbar Habibie dikukuhkan kembali sebagai Ketua Umum ISMI</b></h3>
-                            <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
-                            </p>
-                            <div class="read">
-                                <p>Baca Selengkapnya</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="berita-card">
-                        <img src="{{ asset('images/ilham-habibie-ketua-umum-ismi.webp') }}" alt="Anggota ISMI">
-                        <div class="container">
-                            <h3><b>Ilham Akbar Habibie dikukuhkan kembali sebagai Ketua Umum ISMI</b></h3>
-                            <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
-                            </p>
-                            <div class="read">
-                                <p>Baca Selengkapnya</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="berita-card">
-                        <img src="{{ asset('images/ilham-habibie-ketua-umum-ismi.webp') }}" alt="Anggota ISMI">
-                        <div class="container">
-                            <h3><b>Ilham Akbar Habibie dikukuhkan kembali sebagai Ketua Umum ISMI</b></h3>
-                            <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
-                            </p>
-                            <div class="read">
-                                <p>Baca Selengkapnya</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="berita-card">
-                        <img src="{{ asset('images/ilham-habibie-ketua-umum-ismi.webp') }}" alt="Anggota ISMI">
-                        <div class="container">
-                            <h3><b>Ilham Akbar Habibie dikukuhkan kembali sebagai Ketua Umum ISMI</b></h3>
-                            <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, nulla vitae varius ultricies, sapien arcu laoreet est, nec blandit nibh velit nec ex.', 100) }}
-                            </p>
-                            <div class="read">
-                                <p>Baca Selengkapnya</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                @empty
+                    not found
+                @endforelse
             </div>
             @if ($beritas instanceof \Illuminate\Pagination\LengthAwarePaginator && $beritas->hasPages())
                 <div style="margin-top: 0px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;">

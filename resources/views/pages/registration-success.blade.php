@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Registrasi Berhasil - ISMI Jawa Barat')
+@section('title', 'Registrasi Berhasil - ISMI')
 
 @section('content')
 <style>
@@ -333,7 +333,7 @@
         </div>
 
         <h1>Registrasi Berhasil!</h1>
-        <p>Selamat datang di ISMI Jawa Barat. Akun Anda telah berhasil dibuat dan sedang dalam proses verifikasi oleh admin.</p>
+        <p>Selamat datang di ISMI. Akun Anda telah berhasil dibuat dan sedang dalam proses verifikasi oleh admin.</p>
 
         <div class="credentials-section">
             <h3>
@@ -427,7 +427,7 @@
 <div id="printContent">
     <div style="font-family: 'Montserrat', Arial, sans-serif; padding: 40px; max-width: 600px; margin: 0 auto;">
         <div style="text-align: center; margin-bottom: 30px;">
-            <h1 style="color: #0a2540; margin: 0 0 10px 0;">ISMI Jawa Barat</h1>
+            <h1 style="color: #0a2540; margin: 0 0 10px 0;">ISMI</h1>
             <h2 style="color: #667eea; margin: 0; font-size: 1.5rem;">Kredensial Login Anggota</h2>
         </div>
         
@@ -526,7 +526,7 @@
         
         const content = `
 ═══════════════════════════════════════════════════════
-        ISMI JAWA BARAT - KREDENSIAL LOGIN
+        ISMI - KREDENSIAL LOGIN
 ═══════════════════════════════════════════════════════
 
 Email Login    : ${email}

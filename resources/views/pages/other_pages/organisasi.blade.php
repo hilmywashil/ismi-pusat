@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Organisasi - ISMI Jawa Barat')
+@section('title', 'Organisasi - ISMI')
 
 @section('content')
     <section class="page-banner">
         <h1>Struktur Organisasi</h1>
-        <p>Struktur Organisasi BPD ISMI Jawa Barat</p>
+        <p>Struktur Organisasi BPD ISMI</p>
     </section>
     <section class="organisasi">
         {{-- Ketua Umum --}}

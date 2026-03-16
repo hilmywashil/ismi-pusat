@@ -578,7 +578,7 @@ $activeMenu = 'dashboard';
         </div>
         <div class="welcome-text">
             <h1>Selamat Datang, {{ auth()->guard('admin')->user()->name }}</h1>
-            <p>Dashboard Admin ISMI Jawa Barat</p>
+            <p>Dashboard Admin ISMI</p>
         </div>
     </div>
 </div>

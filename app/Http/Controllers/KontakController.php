@@ -25,7 +25,7 @@ class KontakController extends Controller
             'message' => $request->message,
         ]);
 
-        return redirect()->back()->with('success', 'Pesan Anda telah terkirim!');
+        return redirect()->back()->with('success', 'Pesan Anda telah terkirim! Terima kasih.');
 
     }
 }
