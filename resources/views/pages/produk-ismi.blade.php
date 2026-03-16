@@ -3,7 +3,7 @@
 @section('title', 'Produk ISMI')
 
 @section('content')
-    <section class="wrapper-quran-page">
+    <section class="wrapper-quran-page-2">
         <div class="katalog-hero" data-aos="fade-up">
             <h2>Produk ISMI</h2>
             <h1>Inovasi yang Mengubah Cara Kerja</h1>

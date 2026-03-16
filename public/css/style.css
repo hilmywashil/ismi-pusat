@@ -61,6 +61,34 @@ a {
     background-repeat: no-repeat;
 }
 
+.wrapper-quran-page-2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 50px 100px 50px;
+    background-image:
+        linear-gradient(rgba(1, 89, 49, 0.6), rgba(1, 89, 49, 0.6)),
+        url('../images/bg-quran-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.wrapper-quran-page-3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 50px 100px 50px;
+    background-image:
+        linear-gradient(rgba(1, 89, 49, 0.6), rgba(1, 89, 49, 0.6)),
+        url('../images/bg-quran-3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .wrapper-white-1 {
     width: 100%;
     display: flex;
@@ -122,6 +150,9 @@ a {
     .wrapper-white-2,
     .wrapper-white-3,
     .wrapper-mosque-page,
+    .wrapper-quran-page,
+    .wrapper-quran-page-2,
+    .wrapper-quran-page-3,
     .wrapper-green {
         padding: 50px 20px 50px 20px;
     }
